@@ -71,27 +71,21 @@ int main(int argc, char **argv){
 		if(c==-1){
 		break;
 		}
+		switch(c) {
+		  		case 'c':
+				count=atoi(optarg);							                               	      break;
+		}
+		
 	}
-
-	switch(c) {
-		case 'c':
-		count=atoi(optarg);
-		break;
-
-	}
-
-	fprintf(stderr, "Accepting %i input strings\n",count);
+	fprintf(stderr, "Accepting %i input strings\n", count);
 
 	while(scanf("%256s", input_word) !=EOF) {
 		add_to_list(input_word);
 		if(!--count) break;
 
 	}
-	//print and free objects
 	
-
-	
-	
-	
+	print_and_free();
 	return 0;
+
 }
